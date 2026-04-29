@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portofolio Alfarian Adisaputra - website portofolio kreatif, rapi, dan responsif.">
+    <link rel="icon" href="img/logos2.png">
+    <title>Alfarian | Home</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body data-page="home">
+    <div class="site-shell">
+        <header class="site-header">
+            <nav class="navbar">
+                <a class="brand" href="index.html">
+                    <img src="img/logos2.png" alt="Logo Alfarian" class="brand-logo">
+                    <span class="brand-copy">
+                        <strong>ALPHARIET.</strong>
+                        <small>Web porto malas</small>
+                    </span>
+                </a>
+
+                <button class="nav-toggle" type="button" aria-label="Buka menu" aria-expanded="false" data-nav-toggle>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="nav-menu" data-nav-menu>
+                    <a href="index.html" class="nav-link is-active">Home</a>
+                    <a href="about.html" class="nav-link">About Me</a>
+                    <a href="collection.html" class="nav-link">My Collection</a>
+                    <a href="contact.html" class="nav-link">Contact Me</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content reveal">
+                    <p class="eyebrow">Welcome To My Space</p>
+                    <h1>Alfarian Adisaputra</h1>
+                    <p class="hero-role">Network Engineer | Beginner Front-End Developer</p>
+                    <p class="hero-text">
+                        Saya suka membangun tampilan web yang rapi, nyaman dilihat, dan tetap punya karakter.
+                        Portofolio ini saya susun untuk memperlihatkan siapa saya, apa yang saya pelajari,
+                        dan bagaimana saya berkembang lewat proses.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="about.html" class="button button-primary">Explore About Me</a>
+                        <a href="collection.html" class="button button-secondary">See My Collection</a>
+                    </div>
+                </div>
+
+                <div class="hero-music-panel reveal is-paused">
+                    <div
+                        style="position: absolute; width: 0; height: 0; overflow: hidden; opacity: 0; pointer-events: none;">
+                        <div id="spotify-player-container"></div>
+                    </div>
+                    <!-- Bouncing Equalizer Background -->
+                    <div class="music-equalizer">
+                        <div class="bar bar-1"></div>
+                        <div class="bar bar-2"></div>
+                        <div class="bar bar-3"></div>
+                        <div class="bar bar-4"></div>
+                        <div class="bar bar-5"></div>
+                    </div>
+
+                    <!-- Floating Music Notes -->
+                    <i class="fa-solid fa-music music-note note-1"></i>
+                    <i class="fa-solid fa-compact-disc music-note note-2"></i>
+                    <i class="fa-solid fa-headphones music-note note-3"></i>
+
+                    <!-- The Music Player Card -->
+                    <div class="music-player-card">
+                        <div class="vinyl-record">
+                            <img src="img/image.png" alt="Stand By Me - Oasis" class="vinyl-art">
+                            <div class="vinyl-hole"></div>
+                        </div>
+
+                        <div class="music-info">
+                            <div class="now-playing-badge">
+                                <span class="live-dot"></span> Now Playing
+                            </div>
+                            <h3>Stand By Me</h3>
+                            <p>Oasis</p>
+
+                            <div class="music-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                                <div class="time-info">
+                                    <span>2:15</span>
+                                    <span>5:56</span>
+                                </div>
+                            </div>
+
+                            <div class="music-controls">
+                                <i class="fa-solid fa-backward-step"></i>
+                                <div class="play-btn" id="music-play-btn">
+                                    <i class="fa-solid fa-play" id="music-play-icon"></i>
+                                </div>
+                                <i class="fa-solid fa-forward-step"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Why This Site</p>
+                    <h2>Portofolio ini dibuat untuk terasa personal, bersih, dan mudah dijelajahi.</h2>
+                </div>
+
+                <div class="feature-grid">
+                    <article class="feature-card reveal">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 48 48" aria-hidden="true">
+                                <rect x="8" y="10" width="32" height="24" rx="8"></rect>
+                                <path d="M16 18H32"></path>
+                                <path d="M16 25H26"></path>
+                            </svg>
+                        </div>
+                        <h3>Visual Tertata</h3>
+                        <p>Semua bagian dirancang supaya tampil bersih dan enak dibaca sejak pertama dibuka.</p>
+                    </article>
+
+                    <article class="feature-card reveal">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 48 48" aria-hidden="true">
+                                <rect x="14" y="6" width="20" height="36" rx="8"></rect>
+                                <path d="M19 14H29"></path>
+                                <path d="M19 22H29"></path>
+                                <circle cx="24" cy="33" r="2"></circle>
+                            </svg>
+                        </div>
+                        <h3>Siap Mobile</h3>
+                        <p>Tampilan tetap rapi di laptop, tablet, maupun layar HP tanpa perlu zoom in atau zoom out.</p>
+                    </article>
+
+                    <article class="feature-card reveal">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 48 48" aria-hidden="true">
+                                <circle cx="24" cy="24" r="14"></circle>
+                                <path d="M24 10V4"></path>
+                                <path d="M24 44V38"></path>
+                                <path d="M38 24H44"></path>
+                                <path d="M4 24H10"></path>
+                            </svg>
+                        </div>
+                        <h3>Interaksi Ringan</h3>
+                        <p>Ada animasi sederhana dan filter koleksi agar website terasa hidup tanpa berlebihan.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section showcase">
+                <div class="showcase-copy reveal">
+                    <p class="eyebrow">Quick Story</p>
+                    <h2>Perjalanan saya masih terus berjalan, dan website ini jadi tempat untuk merangkumnya.</h2>
+                    <p>
+                        Saya tertarik pada dunia jaringan komputer dan mulai belajar front-end untuk membuat tampilan
+                        digital yang lebih menarik. Dari situ, saya ingin menggabungkan sisi teknis dengan presentasi
+                        visual
+                        yang nyaman untuk orang lain.
+                    </p>
+                    <a href="contact.html" class="text-link">Let&apos;s Connect</a>
+                </div>
+
+                <div class="showcase-board reveal">
+                    <div class="board-card board-card-large">
+                        <span>Focus</span>
+                        <strong>Learning by building</strong>
+                    </div>
+                    <div class="board-card">
+                        <span>Style</span>
+                        <strong>Clean & Creative</strong>
+                    </div>
+                    <div class="board-card">
+                        <span>Goal</span>
+                        <strong>Grow Every Day</strong>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div>
+                <h3>Alfarian Portfolio</h3>
+                <p>Website portofolio personal yang dirancang sederhana, kreatif, dan responsif.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="about.html">About Me</a>
+                <a href="collection.html">Collection</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <p class="copyright">&copy; <span data-year></span> Alfarian Adisaputra</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

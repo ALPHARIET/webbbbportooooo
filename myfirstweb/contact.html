@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hubungi Alfarian Adisaputra melalui halaman contact me.">
+    <link rel="icon" href="img/logos2.png">
+    <title>Alfarian | Contact Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="contact">
+    <div class="site-shell">
+        <header class="site-header">
+            <nav class="navbar">
+                <a class="brand" href="index.html">
+                    <img src="img/logos2.png" alt="Logo Alfarian" class="brand-logo">
+                    <span class="brand-copy">
+                        <strong>Alfarian</strong>
+                        <small>Creative Portfolio</small>
+                    </span>
+                </a>
+
+                <button class="nav-toggle" type="button" aria-label="Buka menu" aria-expanded="false" data-nav-toggle>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="nav-menu" data-nav-menu>
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About Me</a>
+                    <a href="collection.html" class="nav-link">My Collection</a>
+                    <a href="contact.html" class="nav-link is-active">Contact Me</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="page-banner reveal">
+                <p class="eyebrow">Contact Me</p>
+                <h1>Kalau ingin menyapa, berdiskusi, atau memberi masukan, saya siap terhubung.</h1>
+                <p>
+                    Halaman ini dibuat jelas dan sederhana agar informasi kontak mudah ditemukan dan nyaman dipakai.
+                </p>
+            </section>
+
+            <section class="section contact-layout">
+                <div class="contact-cards">
+                    <article class="contact-card reveal">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 48 48" aria-hidden="true">
+                                <path d="M14 10H34A6 6 0 0 1 40 16V32A6 6 0 0 1 34 38H14A6 6 0 0 1 8 32V16A6 6 0 0 1 14 10Z"></path>
+                                <path d="M16 18C20 26 24 29 31 32"></path>
+                            </svg>
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <p>0896-XXXX-1572</p>
+                    </article>
+
+                    <article class="contact-card reveal">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 48 48" aria-hidden="true">
+                                <rect x="10" y="10" width="28" height="28" rx="9"></rect>
+                                <circle cx="24" cy="24" r="7"></circle>
+                                <circle cx="31" cy="17" r="1.5"></circle>
+                            </svg>
+                        </div>
+                        <h3>Instagram</h3>
+                        <p>@alfarian._</p>
+                    </article>
+
+                    <article class="contact-card reveal">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 48 48" aria-hidden="true">
+                                <rect x="8" y="12" width="32" height="24" rx="6"></rect>
+                                <path d="M12 18L24 27L36 18"></path>
+                            </svg>
+                        </div>
+                        <h3>Email</h3>
+                        <p>alfarian.adisaputra@gmail.com</p>
+                    </article>
+
+                    <article class="contact-card reveal">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 48 48" aria-hidden="true">
+                                <path d="M24 40C31 32 36 27 36 20A12 12 0 1 0 12 20C12 27 17 32 24 40Z"></path>
+                                <circle cx="24" cy="20" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3>Address</h3>
+                        <p>Rawa Makmur Permai</p>
+                    </article>
+                </div>
+
+                <form class="contact-form reveal" data-contact-form>
+                    <p class="eyebrow">Send Message</p>
+                    <h2>Kirim pesan singkat</h2>
+
+                    <label for="name">Nama</label>
+                    <input id="name" name="name" type="text" placeholder="Nama kamu" required>
+
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="email@contoh.com" required>
+
+                    <label for="message">Pesan</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tulis pesanmu di sini..." required></textarea>
+
+                    <button type="submit" class="button button-primary">Kirim Pesan</button>
+                    <p class="form-message" data-form-message aria-live="polite"></p>
+                </form>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div>
+                <h3>Alfarian Portfolio</h3>
+                <p>Terima kasih sudah mampir. Semoga kita bisa terhubung lebih lanjut.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="collection.html">Collection</a>
+            </div>
+
+            <p class="copyright">&copy; <span data-year></span> Alfarian Adisaputra</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
