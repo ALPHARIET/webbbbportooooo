@@ -3,6 +3,49 @@ const toggleButton = document.querySelector("[data-nav-toggle]");
 const navMenu = document.querySelector("[data-nav-menu]");
 const siteHeader = document.querySelector(".site-header");
 
+// --- Sliding blob indicator (Click to move) ---
+if (navMenu) {
+    const blob = document.createElement('div');
+    blob.className = 'nav-blob';
+    navMenu.appendChild(blob);
+
+    const links = navMenu.querySelectorAll('.nav-link');
+    const activeLink = navMenu.querySelector('.nav-link.is-active');
+
+    function moveBlob(el) {
+        if (!el) { blob.style.opacity = '0'; return; }
+        const menuRect = navMenu.getBoundingClientRect();
+        const elRect = el.getBoundingClientRect();
+        blob.style.left = (elRect.left - menuRect.left) + 'px';
+        blob.style.width = elRect.width + 'px';
+        blob.style.top = (elRect.top - menuRect.top) + 'px';
+        blob.style.height = elRect.height + 'px';
+        blob.style.opacity = '1';
+    }
+
+    // Initialize on active link
+    if (activeLink) {
+        requestAnimationFrame(() => requestAnimationFrame(() => moveBlob(activeLink)));
+    }
+
+    // Move on click, then delay navigation
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Only intercept if it's not already active
+            if (!link.classList.contains('is-active')) {
+                e.preventDefault();
+                moveBlob(link);
+                // Wait for the "melting" animation to mostly finish before navigating
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 500);
+            }
+        });
+    });
+
+    window.addEventListener('resize', () => moveBlob(navMenu.querySelector('.nav-link.is-active')));
+}
+
 if (toggleButton && navMenu) {
     toggleButton.addEventListener("click", () => {
         const isOpen = document.body.classList.toggle("is-menu-open");
@@ -76,20 +119,21 @@ if (siteHeader) {
     let lastScrollY = window.scrollY;
 
     const showHeader = () => {
-        siteHeader.classList.remove("is-hidden");
+        siteHeader.classList.remove("is-compact");
     };
 
     const hideHeader = () => {
         if (!document.body.classList.contains("is-menu-open")) {
-            siteHeader.classList.add("is-hidden");
+            siteHeader.classList.add("is-compact");
         }
     };
 
     const updateHeaderStyle = () => {
-        if (window.scrollY > 12) {
+        if (window.scrollY > 20) {
             siteHeader.classList.add("is-scrolled");
         } else {
             siteHeader.classList.remove("is-scrolled");
+            showHeader(); // Force show when at top
         }
     };
 
@@ -99,15 +143,14 @@ if (siteHeader) {
 
         updateHeaderStyle();
 
-        if (currentScrollY <= 16) {
-            showHeader();
+        if (currentScrollY <= 20) {
             lastScrollY = currentScrollY;
             return;
         }
 
-        if (delta > 6) {
+        if (delta > 8) {
             hideHeader();
-        } else if (delta < -6) {
+        } else if (delta < -8) {
             showHeader();
         }
 
