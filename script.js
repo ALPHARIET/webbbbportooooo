@@ -117,7 +117,7 @@ if (siteHeader) {
     let lastScrollY = window.scrollY;
 
     const showHeader = () => {
-        siteHeader.classList.remove("is-compact");
+        
     };
 
     const hideHeader = () => {
