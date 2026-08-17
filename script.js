@@ -35,10 +35,8 @@ if (navMenu) {
             if (!link.classList.contains('is-active')) {
                 e.preventDefault();
                 moveBlob(link);
-                // Wait for the "melting" animation to mostly finish before navigating
-                setTimeout(() => {
-                    window.location.href = link.href;
-                }, 500);
+                // No delay, navigate immediately
+                window.location.href = link.href;
             }
         });
     });
@@ -123,9 +121,7 @@ if (siteHeader) {
     };
 
     const hideHeader = () => {
-        if (!document.body.classList.contains("is-menu-open")) {
-            siteHeader.classList.add("is-compact");
-        }
+        // Disabled compact mode
     };
 
     const updateHeaderStyle = () => {
@@ -133,26 +129,13 @@ if (siteHeader) {
             siteHeader.classList.add("is-scrolled");
         } else {
             siteHeader.classList.remove("is-scrolled");
-            showHeader(); // Force show when at top
         }
     };
 
     window.addEventListener("scroll", () => {
         const currentScrollY = window.scrollY;
-        const delta = currentScrollY - lastScrollY;
 
         updateHeaderStyle();
-
-        if (currentScrollY <= 20) {
-            lastScrollY = currentScrollY;
-            return;
-        }
-
-        if (delta > 8) {
-            hideHeader();
-        } else if (delta < -8) {
-            showHeader();
-        }
 
         lastScrollY = currentScrollY;
     }, { passive: true });
