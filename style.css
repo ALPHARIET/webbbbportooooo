@@ -91,52 +91,17 @@ textarea {
         0 0 0 0.5px rgba(255, 255, 255, 0.1);
     transition:
         transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-        max-width 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-        min-width 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+        
+        
         padding 0.6s cubic-bezier(0.4, 0, 0.2, 1),
         background 0.4s ease,
         border-color 0.4s ease;
-    will-change: transform, max-width, min-width;
+    will-change: transform;
     overflow: hidden; /* To clip menu when compacting */
 }
 
 .site-header.is-scrolled {
     background: linear-gradient(135deg, rgba(30, 30, 60, 0.5) 0%, rgba(20, 20, 45, 0.3) 50%, rgba(30, 30, 60, 0.4) 100%);
-}
-
-/* Compact mode: shrink navbar, hide menu */
-.site-header.is-compact {
-    max-width: 80px; /* Just enough for the logo */
-    min-width: 0;
-}
-
-.site-header.is-compact .nav-menu {
-    opacity: 0;
-    pointer-events: none;
-    transform: scale(0.9) translateX(-10px);
-}
-
-.site-header.is-compact .navbar {
-    padding: 6px;
-    gap: 0;
-    justify-content: center;
-}
-
-/* Expand on hover when compact */
-.site-header.is-compact:hover {
-    max-width: calc(100vw - 32px);
-    /* natural width */
-}
-
-.site-header.is-compact:hover .nav-menu {
-    opacity: 1;
-    pointer-events: auto;
-    transform: scale(1) translateX(0);
-}
-
-.site-header.is-compact:hover .navbar {
-    padding: 6px 8px 6px 20px;
-    gap: 12px;
 }
 
 .page-banner,
@@ -154,7 +119,7 @@ textarea {
     gap: 16px;
     min-height: 48px;
     padding: 4px 12px 4px 24px;
-    transition: padding 0.6s cubic-bezier(0.4, 0, 0.2, 1), gap 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .brand {
@@ -177,17 +142,6 @@ textarea {
     display: grid;
     gap: 1px;
     transition: opacity 0.3s ease;
-}
-
-.site-header.is-compact .brand-copy {
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-}
-
-.site-header.is-compact:hover .brand-copy {
-    opacity: 1;
-    position: static;
 }
 
 .brand-copy strong,
@@ -1615,21 +1569,6 @@ body.cursor-pressed .cursor-ring {
     .navbar {
         min-height: 48px;
         padding: 4px 6px 4px 14px;
-    }
-
-    .site-header.is-compact {
-        max-width: calc(100vw - 32px); /* Don't shrink to 80px on mobile */
-    }
-
-    .site-header.is-compact .navbar {
-        padding: 4px 6px 4px 14px;
-        justify-content: space-between;
-    }
-
-    .site-header.is-compact .brand-copy {
-        opacity: 1;
-        position: static;
-        pointer-events: auto;
     }
 
     .profile-stats {
