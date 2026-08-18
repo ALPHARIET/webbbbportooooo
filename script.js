@@ -9,7 +9,6 @@ if (navMenu) {
     blob.className = 'nav-blob';
     navMenu.appendChild(blob);
 
-    const links = navMenu.querySelectorAll('.nav-link');
     const activeLink = navMenu.querySelector('.nav-link.is-active');
 
     function moveBlob(el) {
@@ -27,19 +26,6 @@ if (navMenu) {
     if (activeLink) {
         requestAnimationFrame(() => requestAnimationFrame(() => moveBlob(activeLink)));
     }
-
-    // Move on click, then delay navigation
-    links.forEach(link => {
-        link.addEventListener('click', (e) => {
-            // Only intercept if it's not already active
-            if (!link.classList.contains('is-active')) {
-                e.preventDefault();
-                moveBlob(link);
-                // No delay, navigate immediately
-                window.location.href = link.href;
-            }
-        });
-    });
 
     window.addEventListener('resize', () => moveBlob(navMenu.querySelector('.nav-link.is-active')));
 }
@@ -113,47 +99,13 @@ if (revealItems.length) {
     revealItems.forEach((item) => observer.observe(item));
 }
 
+// ponytail: header scroll style — add hide/show logic here if needed later
 if (siteHeader) {
-    let lastScrollY = window.scrollY;
-
-    const showHeader = () => {
-        
-    };
-
-    const hideHeader = () => {
-        // Disabled compact mode
-    };
-
     const updateHeaderStyle = () => {
-        if (window.scrollY > 20) {
-            siteHeader.classList.add("is-scrolled");
-        } else {
-            siteHeader.classList.remove("is-scrolled");
-        }
+        siteHeader.classList.toggle("is-scrolled", window.scrollY > 20);
     };
 
-    window.addEventListener("scroll", () => {
-        const currentScrollY = window.scrollY;
-
-        updateHeaderStyle();
-
-        lastScrollY = currentScrollY;
-    }, { passive: true });
-
-    window.addEventListener("mousemove", (event) => {
-        if (event.clientY <= 92) {
-            showHeader();
-        }
-    });
-
-    siteHeader.addEventListener("mouseenter", showHeader);
-    window.addEventListener("touchstart", () => {
-        if (window.scrollY > 16) {
-            showHeader();
-        }
-    }, { passive: true });
-
-    // Initialize header style on load
+    window.addEventListener("scroll", updateHeaderStyle, { passive: true });
     updateHeaderStyle();
 }
 
